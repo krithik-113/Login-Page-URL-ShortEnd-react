@@ -42,11 +42,11 @@ const RegisterNewAC = () => {
       setErrPass(errPass)
     } else {
        axios
-         .post("http://localhost:3003/api/user", {
+         .post("https://login-page-url-shortend-react.onrender.com/api/user", {
            email: email,
            password: pass,
            firstName: fName,
-           lastName:lName,
+           lastName: lName,
          })
          .then((res) => {
            if (res.data.message === "User Email already Exists") {

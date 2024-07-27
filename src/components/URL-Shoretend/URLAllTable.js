@@ -7,12 +7,15 @@ const URLAllTable = ({ dataEmail }) => {
 
   useEffect(() => {
     
-    axios.get(`http://localhost:3003/url/getuser/${dataEmail}`)
-      .then(res => {
-        setUser(res.data.user)
-        console.log(res.data.user)
+    axios
+      .get(
+        `https://login-page-url-shortend-react.onrender.com/url/getuser/${dataEmail}`
+      )
+      .then((res) => {
+        setUser(res.data.user);
+        console.log(res.data.user);
       })
-      .catch(err=>console.log(err.message))
+      .catch((err) => console.log(err.message));
   },[dataEmail])
 
   return (

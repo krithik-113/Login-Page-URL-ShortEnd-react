@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const URLShorentSite = ({ dataEmail }) => {
 const navigate =useNavigate()
@@ -19,16 +19,22 @@ const navigate =useNavigate()
         }
         else {
             setError('')
-            axios.post(`http://localhost:3003/url/shorturl/${dataEmail}`, {
-                url : bigURL
-            })
-                .then(res => {
-                  console.log(`Your email: ${res.data.email}\n Note:- ${res.data.message}\n Shorten URL- ${res.data.shortURL}\n`)
-                  console.log(res.data.user)
-                    setShorturl(res.data.shortURL);
-                    popupRef.current.style.display = "block";
-                })
-                .catch(err => console.log(err.message))
+            axios
+              .post(
+                `https://login-page-url-shortend-react.onrender.com/url/shorturl/${dataEmail}`,
+                {
+                  url: bigURL,
+                }
+              )
+              .then((res) => {
+                console.log(
+                  `Your email: ${res.data.email}\n Note:- ${res.data.message}\n Shorten URL- ${res.data.shortURL}\n`
+                );
+                console.log(res.data.user);
+                setShorturl(res.data.shortURL);
+                popupRef.current.style.display = "block";
+              })
+              .catch((err) => console.log(err.message));
         }
     }
     function handleClosePopup() {

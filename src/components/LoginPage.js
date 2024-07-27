@@ -5,7 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 const LoginPage = ({ setDataEmail }) => {
   const [innemail, setInnEmail] = useState("");
   const [innpass, setInnPass] = useState("");
-  const API_URL = "http://localhost:3003/api/authenticate"; //POST
+  const API_URL =
+    "https://login-page-url-shortend-react.onrender.com/api/authenticate"; //POST
 
   let [errEmail, setErrEmail] = useState("");
   let [errPass, setErrPass] = useState("");

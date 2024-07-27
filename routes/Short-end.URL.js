@@ -10,7 +10,7 @@ Router.post("/shorturl/:email", async (req, res) => {
     const user = await User.find({ email });
     if (!user.length)
       return res.json({ message: "Kindly Login to Short-End the URL" });
-    const shortURL = "localhost:3003/url/short/<email>";
+    const shortURL = "https://login-page-url-shortend-react.onrender.com/url/short/<email>";
     await User.updateOne({ email }, { $push: { url, shortURL: shortURL } });
     res.json({
       message:

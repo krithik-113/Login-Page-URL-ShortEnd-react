@@ -7,12 +7,12 @@ const AllURLs = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3003/url/allurl`)
+      .get(`https://login-page-url-shortend-react.onrender.com/url/allurl`)
       .then((response) => response.data)
-        .then((result) => {
-            setData(result.user)
-            console.log(result.user)
-        })
+      .then((result) => {
+        setData(result.user);
+        console.log(result.user);
+      })
       .catch((err) => console.log(err.message));
   }, []);
 

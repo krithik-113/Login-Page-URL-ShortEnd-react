@@ -15,9 +15,12 @@ const Reset_Password = () => {
   
   const handlePasswordCheck = () => {
     axios
-      .post("http://localhost:3003/api/reset-password", {
-        email,
-      })
+      .post(
+        "https://login-page-url-shortend-react.onrender.com/api/reset-password",
+        {
+          email,
+        }
+      )
       .then((res) => res.data)
       .then((result) => {
         alert(
@@ -31,9 +34,12 @@ const Reset_Password = () => {
 
   const handlePasswordChange = () => {
     axios
-      .post(`http://localhost:3003/api/reset-password/${token}`, {
-        password: newPass,
-      })
+      .post(
+        `https://login-page-url-shortend-react.onrender.com/api/reset-password/${token}`,
+        {
+          password: newPass,
+        }
+      )
       .then((response) => response.data)
       .then((result) => {
         alert(`${result.message}`);
